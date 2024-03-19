@@ -5,15 +5,15 @@ import {
   FILTER_COUNTRIES,
 } from "../actions/FlagsAction";
 
-const initialState = {
+const initialCountriesState = {
   countries: [],
-  regions: ["Africa", "Americas", "Asia", "Europe", "Oceania"],
+  regions: ["All Regions", "Africa", "Americas", "Asia", "Europe", "Oceania"],
   filteredCountries: [],
   searchTerm: "",
   filteredRegion: "",
 };
 
-const FlagsReducer = (state = initialState, action) => {
+const FlagsReducer = (state = initialCountriesState, action) => {
   switch (action.type) {
     case FETCH_COUNTRIES:
       return {

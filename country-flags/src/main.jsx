@@ -1,19 +1,27 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
-import { createRoot } from "react-dom/client"; // Importing createRoot from the correct location
-import rootReducer from "./redux/reducers/FlagsReducer";
+import { createStore, combineReducers } from "redux";
+import { createRoot } from "react-dom/client";
+import FlagReducer from "./redux/reducers/FlagsReducer";
+import DarkModeReducer from "./redux/reducers/DarkModeReducer";
+import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
 
-const store = createStore(rootReducer);
+const rootReducer = combineReducers({
+  darkMode: DarkModeReducer,
+  flags: FlagReducer,
+});
 
+const store = createStore(rootReducer);
 const rootElement = document.getElementById("root");
 
 const app = (
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <Router>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </Router>
   </React.StrictMode>
 );
 

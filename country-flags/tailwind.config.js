@@ -1,13 +1,8 @@
-/** @type {import('tailwindcss').Config} */
+// /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
-    screens: {
-      sm: "576px",
-      smPlus: "700px",
-      md: "960px",
-      lg: "1440px",
-    },
     extend: {
       fontFamily: {
         display: ["Nunito Sans", "sans-serif"],
@@ -21,6 +16,5 @@ export default {
       },
     },
   },
-  darkMode: "class",
   plugins: [],
 };
