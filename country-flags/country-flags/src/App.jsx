@@ -6,7 +6,7 @@ import CountryList from "./components/CountryList";
 import RegionFilter from "./components/RegionFilter";
 import SearchInput from "./components/SearchInput";
 import Navbar from "./common/Navbar";
-import "./styles/index.css";
+import MainStyle from "./styles/index.css";
 import CountryDetailPage from "./components/CountryDetailPage";
 import {
   BrowserRouter as Router,
@@ -107,6 +107,7 @@ const App = ({ countries, regions }) => {
                 <CountryDetailPage
                   navigate={navigate}
                   isMenuOpen={isMenuOpen}
+                  countries={countries}
                 />
               }
             />
